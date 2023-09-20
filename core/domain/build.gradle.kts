@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.iot.core.data"
+    namespace = "com.iot.core.domain"
 }
 
 dependencies {
+    implementation(project(":core:data"))
     implementation(project(":core:model"))
-    implementation(project(":core:network"))
     implementation(libs.kotlinx.coroutines)
-    testImplementation(libs.junit4)
 }

@@ -1,5 +1,6 @@
 package com.iot.network.di
 
+import com.iot.network.api.SensorsApi
 import com.iot.network.remote.SensorsRemoteDataSource
 import com.iot.network.remote.impl.SensorsRemoteDataSourceImpl
 import kotlinx.serialization.json.Json
@@ -8,10 +9,11 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.Module
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
-val interceptorsModule: Module
+private val interceptorsModule: Module
     get() = module {
         single {
             HttpLoggingInterceptor().apply {
@@ -20,21 +22,32 @@ val interceptorsModule: Module
         }
     }
 
-val serializerModule: Module
+private val serializerModule: Module
     get() = module {
         single<Json> {
             Json {
                 prettyPrint = true
+                ignoreUnknownKeys = true
             }
         }
     }
 
-val remoteDataSourceModule: Module
+private val apiModule: Module
     get() = module {
+        single(named(Constants.SENSORS_API)) {
+            provideRetrofit(client = get(named(Constants.DEFAULT_CLIENT)), jsonDeserializer = get<Json>(), urlBase = sensorsBaseUrl)
+        }
+
+        factory<SensorsApi> { provideApi<SensorsApi>(get(named(Constants.SENSORS_API))) }
+    }
+
+val networkKoinModule: Module
+    get() = module {
+        includes(apiModule, interceptorsModule, serializerModule)
         factory<SensorsRemoteDataSource> { SensorsRemoteDataSourceImpl(get()) }
     }
 
-fun provideRetrofit(client: OkHttpClient, jsonDeserializer: Json, urlBase: String): Retrofit {
+private fun provideRetrofit(client: OkHttpClient, jsonDeserializer: Json, urlBase: String): Retrofit {
     val contentType = "application/json".toMediaType()
     return Retrofit.Builder()
         .baseUrl(urlBase)
@@ -43,4 +56,4 @@ fun provideRetrofit(client: OkHttpClient, jsonDeserializer: Json, urlBase: Strin
         .build()
 }
 
-inline fun <reified T> provideApi(retrofit: Retrofit): T = retrofit.create(T::class.java)
+private inline fun <reified T> provideApi(retrofit: Retrofit): T = retrofit.create(T::class.java)

@@ -6,5 +6,4 @@ import com.iot.network.remote.SensorsRemoteDataSource
 internal class SensorsRemoteDataSourceImpl(
     private val api: SensorsApi
 ): SensorsRemoteDataSource {
-
 }
