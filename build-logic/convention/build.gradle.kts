@@ -27,6 +27,10 @@ gradlePlugin {
             id = "jarvis.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidFeature") {
+            id = "jarvis.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("androidFlavors") {
             id = "jarvis.android.flavors"
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"

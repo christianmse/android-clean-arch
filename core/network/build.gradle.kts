@@ -1,8 +1,8 @@
 plugins {
-    alias(libs.plugins.secrets)
     id("jarvis.android.library")
     id("jarvis.kotlin.serialization.library")
     id("jarvis.android.koin")
+    alias(libs.plugins.secrets)
 }
 
 android {
@@ -13,6 +13,7 @@ android {
 }
 
 secrets {
+    propertiesFileName = "secrets.properties"
     defaultPropertiesFileName = "secrets.defaults.properties"
 }
 

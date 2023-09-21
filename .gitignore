@@ -27,6 +27,8 @@ captures/
 # the project can be imported from settings.gradle.kts
 *.iml
 /.idea/*
+.idea/
+/.idea/
 .DS_Store
 .externalNativeBuild
 .cxx

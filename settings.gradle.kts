@@ -16,8 +16,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Jarvis"
 include(":app")
+include(":feature")
 include(":core:common")
 include(":core:data")
 include(":core:model")
 include(":core:network")
 include(":core:domain")
+include(":feature:home")

@@ -39,6 +39,16 @@ fun configureFlavors(
             AppFlavor.values().forEach { mFlavor ->
                 create(mFlavor.name) {
                     dimension = mFlavor.dimension.name
+                    if (mFlavor.dimension == FlavorDimension.DEVICE) {
+                        when(name) {
+                            AppFlavor.tv.name -> {
+                                manifestPlaceholders["launcherCategory"] = "LEANBACK_LAUNCHER"
+                            }
+                            AppFlavor.mobile.name -> {
+                                manifestPlaceholders["launcherCategory"] = "LAUNCHER"
+                            }
+                        }
+                    }
                     if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {
                         mFlavor.applicationIdSuffix?.let {
                             applicationIdSuffix = it

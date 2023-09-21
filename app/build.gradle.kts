@@ -4,6 +4,7 @@ plugins {
     id("jarvis.android.application")
     id("jarvis.android.flavors")
     id("jarvis.android.koin")
+    alias(libs.plugins.kotlin.android)
 }
 val majorVersion = 1
 val minorVersion = 0
@@ -39,7 +40,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":feature:home"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

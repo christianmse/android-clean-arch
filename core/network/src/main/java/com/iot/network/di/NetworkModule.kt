@@ -3,6 +3,7 @@ package com.iot.network.di
 import com.iot.network.api.SensorsApi
 import com.iot.network.remote.SensorsRemoteDataSource
 import com.iot.network.remote.impl.SensorsRemoteDataSourceImpl
+import com.iot.network.sensorsBaseUrl
 import kotlinx.serialization.json.Json
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import okhttp3.MediaType.Companion.toMediaType
