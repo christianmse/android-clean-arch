@@ -1,4 +1,4 @@
-package ui
+package com.iot.jarvis.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
