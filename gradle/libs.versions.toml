@@ -1,5 +1,5 @@
 [versions]
-androidGradlePlugin = "8.2.0-beta04"
+androidGradlePlugin = "8.2.0-beta05"
 androidxAppCompat = "1.6.1"
 androidxCore = "1.10.1"
 androidxTestExt = "1.1.5"
