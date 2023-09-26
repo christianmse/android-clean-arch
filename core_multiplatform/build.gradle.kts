@@ -4,12 +4,14 @@ plugins {
     kotlin("multiplatform") version "1.9.10"
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.android.library)
+    id("maven-publish")
 }
 
 group = "com.iot.multiplatform.jarvis"
-version = "0.0.1"
+version = "1.0.0"
 
 repositories {
+    google()
     mavenCentral()
 }
 
