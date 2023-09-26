@@ -1,5 +1,7 @@
 package com.iot.data.repository
 
+import kotlinx.coroutines.flow.Flow
+
 interface SensorsRepository {
-    suspend fun getSensors()
+    val sensorsStream: Flow<String>
 }

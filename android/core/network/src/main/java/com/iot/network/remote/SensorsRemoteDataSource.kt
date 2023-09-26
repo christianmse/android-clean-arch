@@ -1,5 +1,5 @@
 package com.iot.network.remote
 
 interface SensorsRemoteDataSource {
-    suspend fun fetchSensors()
+    suspend fun fetchSensors(): String
 }
