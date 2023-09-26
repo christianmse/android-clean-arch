@@ -35,3 +35,4 @@ captures/
 .cxx
 ../.gradle/
 ../.idea/modules/*
+/*.log

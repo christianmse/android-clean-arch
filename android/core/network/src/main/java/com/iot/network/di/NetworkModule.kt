@@ -1,5 +1,6 @@
 package com.iot.network.di
 
+import com.iot.core_multiplatform.service.SensorsService
 import com.iot.network.api.SensorsApi
 import com.iot.network.remote.SensorsRemoteDataSource
 import com.iot.network.remote.impl.SensorsRemoteDataSourceImpl
@@ -44,8 +45,8 @@ private val apiModule: Module
 
 val networkKoinModule: Module
     get() = module {
-        includes(apiModule, interceptorsModule, serializerModule)
-        factory<SensorsRemoteDataSource> { SensorsRemoteDataSourceImpl(get()) }
+        includes(httpClientModule, apiModule, interceptorsModule, serializerModule)
+        factory<SensorsRemoteDataSource> { SensorsRemoteDataSourceImpl(get(), SensorsService) }
     }
 
 private fun provideRetrofit(client: OkHttpClient, jsonDeserializer: Json, urlBase: String): Retrofit {

@@ -14,6 +14,7 @@ internal class SensorsRepositoryImpl(
 
     override val sensorsStream: Flow<String>
         get() = flow {
+            kotlinx.coroutines.delay(5000)
             emit(remote.fetchSensors())
         }.flowOn(Dispatchers.IO)
 }

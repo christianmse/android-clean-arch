@@ -15,10 +15,10 @@ class HomeViewModel(
     getSensorsUseCase: GetSensorsUseCase
 ) : ViewModel() {
 
-    sealed interface HomeUiState {
-        data object Loading : HomeUiState
-        data class Sucess(val msg: String) : HomeUiState
-        data class Error(val msg: String) : HomeUiState
+    sealed class HomeUiState(open val msg: String) {
+        data object Loading : HomeUiState("Cargando")
+        data class Sucess(override val msg: String) : HomeUiState(msg)
+        data class Error(override val msg: String) : HomeUiState(msg)
     }
 
     val uiState: StateFlow<HomeUiState> = getSensorsUseCase.sensorsUiStateStream().stateIn(

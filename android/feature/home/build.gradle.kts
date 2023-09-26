@@ -4,6 +4,9 @@ plugins {
 
 android {
     namespace = "com.iot.feature.home"
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
