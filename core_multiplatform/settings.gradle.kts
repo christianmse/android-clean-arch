@@ -11,7 +11,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("./gradle/core_libs.versions.toml"))
+        }
+    }
 }
 
-rootProject.name = "myLib"
-include(":shared")
+rootProject.name = "core_multiplatform"
