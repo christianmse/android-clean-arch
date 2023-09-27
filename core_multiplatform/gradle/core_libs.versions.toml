@@ -1,0 +1,15 @@
+[versions]
+androidGradlePlugin = "8.2.0-beta05"
+kotlin = "1.9.10"
+kotlinCoroutines = "1.6.4"
+kotlinJsonSerialization = "1.5.1"
+ktor_version = "2.3.4"
+[libraries]
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor_version"}
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor_version"}
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor_version"}
+kotlinx-json-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref="kotlinJsonSerialization" }
+[plugins]
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

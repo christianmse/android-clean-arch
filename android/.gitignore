@@ -1,0 +1,38 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+secrets.properties
+
+# Gradle cache
+.gradle
+
+# Android Studio captures folder
+captures/
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle.kts
+*.iml
+*/.idea/*
+.idea
+/.idea/
+.DS_Store
+.externalNativeBuild
+.cxx
+../.gradle/
+../.idea/modules/*
+/*.log
