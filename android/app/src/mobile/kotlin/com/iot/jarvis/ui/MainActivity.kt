@@ -1,33 +1,29 @@
 package com.iot.jarvis.ui
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.iot.common.ui.BaseActivity
 import com.iot.jarvis.R
 import com.iot.jarvis.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>(
+    MainActivityViewModel::class
+) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
-
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+    }
+
+    override fun setUpViewBinding(inflater: LayoutInflater): ActivityMainBinding {
+        return ActivityMainBinding.inflate(inflater)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

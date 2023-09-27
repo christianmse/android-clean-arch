@@ -1,12 +1,10 @@
 plugins {
     id("jarvis.android.feature")
+    id("jarvis.android.koin")
 }
 
 android {
     namespace = "com.iot.feature.home"
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {

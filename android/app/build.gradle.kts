@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(project(":feature:home"))
+    implementation(project(":core:common"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
