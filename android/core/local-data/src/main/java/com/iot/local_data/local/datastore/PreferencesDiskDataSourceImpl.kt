@@ -3,13 +3,12 @@ package com.iot.local_data.local.datastore
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import com.iot.local_data.local.UserPreferencesDiskDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-internal class UserPreferencesDiskDataSourceImpl(
+internal class PreferencesDiskDataSourceImpl(
     private val dataStore: DataStore<Preferences>
-): UserPreferencesDiskDataSource {
+): PreferencesDiskDataSource {
     override suspend fun clearAllPreferences() {
         dataStore.edit {
             it.clear()
@@ -22,10 +21,10 @@ internal class UserPreferencesDiskDataSourceImpl(
         }
     }
 
-    override suspend fun <VALUE : Any> read(preference: DiskPreferenceKeys): Flow<VALUE>? {
+    override fun <VALUE> read(preference: DiskPreferenceKeys): Flow<VALUE?> {
         return dataStore.data.map { prefs ->
             prefs[preference.key]
-        } as? Flow<VALUE>
+        } as Flow<VALUE?>
     }
 
 }

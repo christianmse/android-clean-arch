@@ -7,5 +7,5 @@ sealed class DiskPreferenceKeys(private val _key: Preferences.Key<*>) {
     val key: Preferences.Key<Any>
         get() = _key as Preferences.Key<Any>
 
-    object MY_PREFERENCE: DiskPreferenceKeys(intPreferencesKey("MyPreference"))
+    object SENSOR_ID: DiskPreferenceKeys(intPreferencesKey("MyPreference"))
 }

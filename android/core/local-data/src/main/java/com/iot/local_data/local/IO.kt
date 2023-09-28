@@ -8,5 +8,5 @@ interface Write {
 }
 
 interface Read {
-    suspend fun <VALUE: Any> read(preference: DiskPreferenceKeys): Flow<VALUE>?
+    fun <VALUE> read(preference: DiskPreferenceKeys): Flow<VALUE?>
 }
