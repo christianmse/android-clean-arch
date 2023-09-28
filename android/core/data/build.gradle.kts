@@ -8,6 +8,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:local-data"))
     implementation(project(":core:model"))
     implementation(project(":core:network"))
     implementation(libs.kotlinx.coroutines)
