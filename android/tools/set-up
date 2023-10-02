@@ -1,12 +1,12 @@
 #!/bin/bash
 
 GIT_DIR=$(git rev-parse --git-dir)
-ROOT=$(pwd)
+ROOT="$(git rev-parse --show-toplevel)/android"
 
-echo "Installing pre-commit hook"
+echo "Installing pre-push hook"
 echo
 mkdir -p "${GIT_DIR}/hooks/"
-cp "${ROOT}/pre-commit" "${GIT_DIR}/hooks/pre-commit" && chmod +x "${GIT_DIR}/hooks/pre-commit"
+cp "${ROOT}/tools/pre-push" "${GIT_DIR}/hooks/pre-push" && chmod +x "${GIT_DIR}/hooks/pre-push"
 
 cat <<-EOF
 Checking the following settings helps avoid miscellaneous issues:
