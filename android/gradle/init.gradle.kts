@@ -23,6 +23,10 @@ rootProject {
                 trimTrailingWhitespace()
                 indentWithSpaces()
             }
+            kotlinGradle {
+                target("*.gradle.kts")
+                ktlint()
+            }
             format("xml") {
                 target("**/*.xml")
                 targetExclude("**/build/**/*.xml")
