@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ConstructorParameterNaming:DiskPreferenceKeys.kt$DiskPreferenceKeys$private val _key: Preferences.Key&lt;*&gt;</ID>
+    <ID>EmptyClassBlock:JarvisApplication.kt$JarvisApplication${ }</ID>
+    <ID>EmptyClassBlock:MainActivityViewModel.kt$MainActivityViewModel${ }</ID>
+    <ID>EnumNaming:AppFlavor.kt$AppFlavor$development : AppFlavor</ID>
+    <ID>EnumNaming:AppFlavor.kt$AppFlavor$mobile : AppFlavor</ID>
+    <ID>EnumNaming:AppFlavor.kt$AppFlavor$production : AppFlavor</ID>
+    <ID>EnumNaming:AppFlavor.kt$AppFlavor$tv : AppFlavor</ID>
+    <ID>MagicNumber:AndroidApplicationConventionPlugin.kt$AndroidApplicationConventionPlugin$34</ID>
+    <ID>MagicNumber:AndroidLibraryConventionPlugin.kt$AndroidLibraryConventionPlugin$34</ID>
+    <ID>MagicNumber:KotlinAndroid.kt$29</ID>
+    <ID>MagicNumber:KotlinAndroid.kt$34</ID>
+    <ID>MagicNumber:SensorsRepositoryImpl.kt$SensorsRepositoryImpl$8000</ID>
+    <ID>MaxLineLength:NetworkModule.kt$provideRetrofit(client = get(named(Constants.DEFAULT_CLIENT)), jsonDeserializer = get&lt;Json&gt;(), urlBase = sensorsBaseUrl)</ID>
+    <ID>NewLineAtEndOfFile:AndroidApplicationConventionPlugin.kt$.AndroidApplicationConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidApplicationFlavorsConventionPlugin.kt$.AndroidApplicationFlavorsConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidFeatureConventionPlugin.kt$.AndroidFeatureConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidKoinConventionPlugin.kt$.AndroidKoinConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidLibraryConventionPlugin.kt$.AndroidLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AppBuildType.kt$com.iot.convention.AppBuildType.kt</ID>
+    <ID>NewLineAtEndOfFile:AppFlavor.kt$com.iot.convention.AppFlavor.kt</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.iot.jarvis.di.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseActivity.kt$com.iot.common.ui.BaseActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseFragment.kt$com.iot.common.ui.BaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseJarvisApplication.kt$com.iot.jarvis.application.BaseJarvisApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:Constants.kt$com.iot.network.di.Constants.kt</ID>
+    <ID>NewLineAtEndOfFile:DiskPreferenceKeys.kt$com.iot.local_data.local.datastore.DiskPreferenceKeys.kt</ID>
+    <ID>NewLineAtEndOfFile:DomainKoinModule.kt$com.iot.domain.di.DomainKoinModule.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.iot.jarvis.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.iot.local_data.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.common.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.domain.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.feature.home.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.jarvis.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.local_data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.network.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:Extensions.kt$com.iot.common.Extensions.kt</ID>
+    <ID>NewLineAtEndOfFile:GetSensorsUseCase.kt$com.iot.domain.usecase.GetSensorsUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeFragment.kt$com.iot.feature.home.ui.view.HomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeKoinModule.kt$com.iot.feature.home.di.HomeKoinModule.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeViewModel.kt$com.iot.feature.home.ui.viewModel.HomeViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:IO.kt$com.iot.local_data.local.IO.kt</ID>
+    <ID>NewLineAtEndOfFile:JarvisApplication.kt$com.iot.jarvis.application.JarvisApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:JvmLibraryConventionPlugin.kt$.JvmLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinAndroid.kt$com.iot.convention.KotlinAndroid.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinSerializationLibraryConventionPlugin.kt$.KotlinSerializationLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:LocalDataModule.kt$com.iot.local_data.di.LocalDataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.iot.jarvis.ui.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$ui.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivityViewModel.kt$com.iot.jarvis.ui.MainActivityViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkModule.kt$com.iot.network.di.NetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:PreferencesDiskDataSource.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:PreferencesDiskDataSourceImpl.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ProjectExtensions.kt$com.iot.convention.ProjectExtensions.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorBO.kt$com.iot.model.SensorBO.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsApi.kt$com.iot.network.api.SensorsApi.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsPreferencesLocalDataSource.kt$com.iot.local_data.local.SensorsPreferencesLocalDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsPreferencesLocalDataSourceImpl.kt$com.iot.local_data.local.impl.SensorsPreferencesLocalDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRemoteDataSource.kt$com.iot.network.remote.SensorsRemoteDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRemoteDataSourceImpl.kt$com.iot.network.remote.impl.SensorsRemoteDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRepository.kt$com.iot.data.repository.SensorsRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRepositoryImpl.kt$com.iot.data.repository.impl.SensorsRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:build.gradle.kts$.build.gradle.kts</ID>
+    <ID>NewLineAtEndOfFile:debugNetworkModule.kt$com.iot.network.di.debugNetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:developmentUrl.kt$com.iot.network.developmentUrl.kt</ID>
+    <ID>NewLineAtEndOfFile:init.gradle.kts$.init.gradle.kts</ID>
+    <ID>NewLineAtEndOfFile:productionUrl.kt$com.iot.network.productionUrl.kt</ID>
+    <ID>NewLineAtEndOfFile:releaseNetworkModule.kt$com.iot.network.di.releaseNetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:settings.gradle.kts$.settings.gradle.kts</ID>
+    <ID>PackageNaming:DiskPreferenceKeys.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageNaming:ExampleInstrumentedTest.kt$package com.iot.local_data</ID>
+    <ID>PackageNaming:ExampleUnitTest.kt$package com.iot.local_data</ID>
+    <ID>PackageNaming:IO.kt$package com.iot.local_data.local</ID>
+    <ID>PackageNaming:LocalDataModule.kt$package com.iot.local_data.di</ID>
+    <ID>PackageNaming:PreferencesDiskDataSource.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageNaming:PreferencesDiskDataSourceImpl.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageNaming:SensorsPreferencesLocalDataSource.kt$package com.iot.local_data.local</ID>
+    <ID>PackageNaming:SensorsPreferencesLocalDataSourceImpl.kt$package com.iot.local_data.local.impl</ID>
+    <ID>TopLevelPropertyNaming:developmentUrl.kt$const val sensorsBaseUrl: String = BuildConfig.DEV_BACKEND_URL</ID>
+    <ID>TopLevelPropertyNaming:productionUrl.kt$const val sensorsBaseUrl: String = BuildConfig.PROD_BACKEND_URL</ID>
+    <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param1: String</ID>
+    <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param2: String</ID>
+    <ID>UnusedPrivateProperty:build.gradle.kts$val clean by registering(Delete::class) { delete(rootProject.buildDir) delete("${rootProject.projectDir}/feature/build") delete("${rootProject.projectDir}/core/build") }</ID>
+    <ID>UnusedPrivateProperty:build.gradle.kts$val detektAll by registering(Detekt::class) { description = "Runs Detekt static code analysis for all modules" basePath = projectDir.absolutePath parallel = true autoCorrect = true config = files("$rootDir/config/detekt/detekt.yml") baseline = file("$rootDir/config/detekt/baseline.xml") setSource(files(projectDir)) include("**/*.kt") include("**/*.kts") exclude("**/resources/**") exclude("**/build/**") exclude("**/tmp/**") reports { sarif.required = true } }</ID>
+    <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

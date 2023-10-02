@@ -19,9 +19,10 @@ rootProject {
             kotlin {
                 target("**/*.kt")
                 targetExclude("**/build/**/*.kt")
-                ktlint(ktlintVersion).userData(mapOf("android" to "true"))
                 trimTrailingWhitespace()
                 indentWithSpaces()
+                ktlint(ktlintVersion)
+                    .userData(mapOf("android" to "true", "package_name" to "disabled"))
             }
             kotlinGradle {
                 target("*.gradle.kts")
