@@ -12,7 +12,6 @@ plugins {
     alias(libs.plugins.secrets) apply false
 }
 
-apply(plugin = "io.gitlab.arturbosch.detekt")
 
 buildscript {
     repositories {
@@ -21,24 +20,16 @@ buildscript {
     }
 }
 
-val detektAll by tasks.registering(Detekt::class) {
+detekt {
     description = "Runs Detekt static code analysis for all modules"
     basePath = projectDir.absolutePath
     ignoreFailures = false
     parallel = true
     autoCorrect = true
     buildUponDefaultConfig = false
-    config = files("$rootDir/config/detekt/detekt.yml")
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
     baseline = file("$rootDir/config/detekt/baseline.xml")
-    setSource(files(projectDir))
-    include("**/*.kt")
-    include("**/*.kts")
-    exclude("**/resources/**")
-    exclude("**/build/**")
-    exclude("**/tmp/**")
-    reports {
-        sarif.required = true
-    }
+    source.setFrom(files(projectDir))
 }
 
 val detektReportMerge by tasks.registering(ReportMergeTask::class) {
@@ -51,12 +42,6 @@ val detektProjectBaseLine by tasks.registering(DetektCreateBaselineTask::class) 
     config = files("$rootDir/config/detekt/detekt.yml")
     baseline = file("$rootDir/config/detekt/baseline.xml")
     setSource(files(projectDir))
-    include("**/*.kt")
-    include("**/*.kts")
-    exclude("**/resources/**")
-    exclude("**/build/**")
-    exclude("**/tmp/**")
-    dependsOn(tasks.detektGenerateConfig)
 }
 
 tasks {
@@ -71,16 +56,27 @@ tasks {
     }
 
     withType<Detekt>().configureEach {
+        include("**/*.kt")
+        include("**/*.kts")
+        exclude("**/resources/**")
+        exclude("**/build/**")
+        exclude("**/tmp/**")
+        reports {
+            sarif.required = true
+        }
         finalizedBy(detektReportMerge)
+    }
+
+    withType<DetektCreateBaselineTask>().configureEach {
+        include("**/*.kt")
+        include("**/*.kts")
+        exclude("**/resources/**")
+        exclude("**/build/**")
+        exclude("**/tmp/**")
+        dependsOn(detektGenerateConfig)
     }
 }
 
-detekt {
-    source.setFrom(rootDir)
-    buildUponDefaultConfig = false
-    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
-    baseline = file("$rootDir/config/detekt/baseline.xml")
-}
 
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")

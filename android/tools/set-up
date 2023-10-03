@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_DIR=$(git rev-parse --git-dir)
-ROOT="$(git rev-parse --show-toplevel)/android"
+ROOT=$(git rev-parse --show-toplevel)/android
 
 print_message() {
   cat <<-EOF

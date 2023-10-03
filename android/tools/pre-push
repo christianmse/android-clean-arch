@@ -4,11 +4,10 @@ echo "*********************************************************"
 echo "Running git pre-push hook. Running Detekt... "
 echo "*********************************************************"
 
-# run spotless apply
 ROOT=$(git rev-parse --show-toplevel)
 OUTPUT="/tmp/detekt-$(date +%s)"
 cd $ROOT/android
-./gradlew --no-configuration-cache detektAll > $OUTPUT
+./gradlew --no-configuration-cache detekt > $OUTPUT
 
 STATUS=$?
 
