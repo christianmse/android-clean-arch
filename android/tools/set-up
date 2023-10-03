@@ -21,15 +21,14 @@ cp "${ROOT}/tools/pre-push" "${GIT_DIR}/hooks/pre-push" && chmod +x "${GIT_DIR}/
 
 cd $ROOT
 
-echo "Generating Detekt config file"
-./gradlew detektGenerateConfig
-
 echo "Generating Detekt baseline"
 ./gradlew --no-configuration-cache detektProjectBaseLine
 
-if [ "$status" = 0 ] ; then
+EXIT_CODE=$?
+
+if [ $EXIT_CODE = 0 ] ; then
   print_message
-  exit 0
+  exit $EXIT_CODE
 else
   exit 1
 fi

@@ -6,25 +6,23 @@ echo "*********************************************************"
 
 # run spotless apply
 ROOT=$(git rev-parse --show-toplevel)
+OUTPUT="/tmp/detekt-$(date +%s)"
 cd $ROOT/android
-./gradlew --no-configuration-cache detektAll
+./gradlew --no-configuration-cache detektAll > $OUTPUT
 
-status=$?
+STATUS=$?
 
-if [ "$status" = 0 ] ; then
+if [ "$STATUS" = 0 ] ; then
     echo "Static analysis found no problems."
-    # Add staged file changes to git
-    for file in $stagedFiles; do
-      if test -f "$file"; then
-        git add $file
-      fi
-    done
-    #Exit
+    rm $OUTPUT
     exit 0
 else
-    echo "*********************************************************"
-    echo 1>&2 "Detekt found violations"
-    echo "*********************************************************"
-    #Exit
-    exit 1
+    cat $OUTPUT
+    rm $OUTPUT
+    echo "********************************************************"
+    echo "                 Detekt failed                          "
+    echo " Please fix the above issues before pushing.            "
+    echo " Report generated: $(pwd)/build/reports/detekt/merged   "
+    echo "********************************************************"
+    exit $EXIT_CODE
 fi

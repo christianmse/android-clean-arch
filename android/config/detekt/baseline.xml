@@ -3,7 +3,6 @@
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
     <ID>ConstructorParameterNaming:DiskPreferenceKeys.kt$DiskPreferenceKeys$private val _key: Preferences.Key&lt;*&gt;</ID>
-    <ID>EmptyClassBlock:JarvisApplication.kt$JarvisApplication${ }</ID>
     <ID>EmptyClassBlock:MainActivityViewModel.kt$MainActivityViewModel${ }</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$development : AppFlavor</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$mobile : AppFlavor</ID>
@@ -85,7 +84,6 @@
     <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param1: String</ID>
     <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param2: String</ID>
     <ID>UnusedPrivateProperty:build.gradle.kts$val clean by registering(Delete::class) { delete(rootProject.buildDir) delete("${rootProject.projectDir}/feature/build") delete("${rootProject.projectDir}/core/build") }</ID>
-    <ID>UnusedPrivateProperty:build.gradle.kts$val detektAll by registering(Detekt::class) { description = "Runs Detekt static code analysis for all modules" basePath = projectDir.absolutePath parallel = true autoCorrect = true config = files("$rootDir/config/detekt/detekt.yml") baseline = file("$rootDir/config/detekt/baseline.xml") setSource(files(projectDir)) include("**/*.kt") include("**/*.kts") exclude("**/resources/**") exclude("**/build/**") exclude("**/tmp/**") reports { sarif.required = true } }</ID>
     <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
     <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
   </CurrentIssues>

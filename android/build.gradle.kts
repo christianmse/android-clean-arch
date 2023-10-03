@@ -1,6 +1,5 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
-import io.gitlab.arturbosch.detekt.DetektGenerateConfigTask
 import io.gitlab.arturbosch.detekt.report.ReportMergeTask
 
 plugins {
@@ -13,10 +12,32 @@ plugins {
     alias(libs.plugins.secrets) apply false
 }
 
+apply(plugin = "io.gitlab.arturbosch.detekt")
+
 buildscript {
     repositories {
         google()
         mavenCentral()
+    }
+}
+
+val detektAll by tasks.registering(Detekt::class) {
+    description = "Runs Detekt static code analysis for all modules"
+    basePath = projectDir.absolutePath
+    ignoreFailures = false
+    parallel = true
+    autoCorrect = true
+    buildUponDefaultConfig = false
+    config = files("$rootDir/config/detekt/detekt.yml")
+    baseline = file("$rootDir/config/detekt/baseline.xml")
+    setSource(files(projectDir))
+    include("**/*.kt")
+    include("**/*.kts")
+    exclude("**/resources/**")
+    exclude("**/build/**")
+    exclude("**/tmp/**")
+    reports {
+        sarif.required = true
     }
 }
 
@@ -35,6 +56,7 @@ val detektProjectBaseLine by tasks.registering(DetektCreateBaselineTask::class) 
     exclude("**/resources/**")
     exclude("**/build/**")
     exclude("**/tmp/**")
+    dependsOn(tasks.detektGenerateConfig)
 }
 
 tasks {
@@ -44,24 +66,6 @@ tasks {
         delete("${rootProject.projectDir}/core/build")
     }
 
-    val detektAll by registering(Detekt::class) {
-        description = "Runs Detekt static code analysis for all modules"
-        basePath = projectDir.absolutePath
-        parallel = true
-        autoCorrect = true
-        config = files("$rootDir/config/detekt/detekt.yml")
-        baseline = file("$rootDir/config/detekt/baseline.xml")
-        setSource(files(projectDir))
-        include("**/*.kt")
-        include("**/*.kts")
-        exclude("**/resources/**")
-        exclude("**/build/**")
-        exclude("**/tmp/**")
-        reports {
-            sarif.required = true
-        }
-    }
-
     detektReportMerge {
         input.from(withType<Detekt>().map { it.sarifReportFile })
     }
@@ -69,19 +73,15 @@ tasks {
     withType<Detekt>().configureEach {
         finalizedBy(detektReportMerge)
     }
-
-    withType<DetektCreateBaselineTask>().configureEach {
-        println("DetektGenerateConfigTask ${this.project}")
-    }
-
-    withType<DetektGenerateConfigTask>().configureEach {
-        println("DetektGenerateConfigTask ${this.project}")
-    }
 }
 
-allprojects {
-    apply(plugin = "io.gitlab.arturbosch.detekt")
-    dependencies {
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")
-    }
+detekt {
+    source.setFrom(rootDir)
+    buildUponDefaultConfig = false
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    baseline = file("$rootDir/config/detekt/baseline.xml")
+}
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")
 }
