@@ -27,10 +27,7 @@ enum class AppFlavor(
     production(dimension = FlavorDimension.ENVIRONMENT, versionNameSuffix = "-prod")
 }
 
-fun configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *, *>,
-    flavorConfigurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {}
-) {
+fun configureFlavors(commonExtension: CommonExtension<*, *, *, *, *>) {
     commonExtension.apply {
         FlavorDimension.values().forEach { mDimension ->
             flavorDimensions.add(mDimension.name)

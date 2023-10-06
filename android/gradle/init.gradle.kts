@@ -1,8 +1,7 @@
 val ktlintVersion = "0.48.1"
 
 initscript {
-    val spotlessVersion = "6.13.0"
-
+    val spotlessVersion = "6.22.0"
     repositories {
         mavenCentral()
     }
@@ -12,6 +11,7 @@ initscript {
     }
 }
 
+// Apply plugin to all project modules
 rootProject {
     subprojects {
         apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
@@ -19,17 +19,18 @@ rootProject {
             kotlin {
                 target("**/*.kt")
                 targetExclude("**/build/**/*.kt")
-                ktlint(ktlintVersion).userData(mapOf("android" to "true"))
+                trimTrailingWhitespace()
+                indentWithSpaces()
+                ktlint(ktlintVersion)
+                    .userData(mapOf("android" to "true", "package_name" to "disabled"))
             }
-            format("kts") {
-                target("**/*.kts")
-                targetExclude("**/build/**/*.kts")
-                // Look for the first line that doesn't have a block comment (assumed to be the license)
+            kotlinGradle {
+                target("*.gradle.kts")
+                ktlint()
             }
             format("xml") {
                 target("**/*.xml")
                 targetExclude("**/build/**/*.xml")
-                // Look for the first XML tag that isn't a comment (<!--) or the xml declaration (<?xml)
             }
         }
     }

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+GIT_DIR=$(git rev-parse --git-dir)
+ROOT=$(git rev-parse --show-toplevel)/android
+
+print_message() {
+  cat <<-EOF
+Check the generated directory for Detekt configuration $rootProject/config/detekt.
+  * detekt.yml defines Detekt configuration
+  * baseline.xml It is a file where ignored code smells are defined.
+Recommendations:
+  * Download Detekt IDE Plugin: https://plugins.jetbrains.com/plugin/10761-detekt
+  * Download Qodana IDE Plugin (Sarif viewer): https://www.jetbrains.com/es-es/qodana/
+EOF
+}
+
+echo "Installing pre-push hook"
+echo
+mkdir -p "${GIT_DIR}/hooks/"
+cp "${ROOT}/tools/pre-push" "${GIT_DIR}/hooks/pre-push" && chmod +x "${GIT_DIR}/hooks/pre-push"
+
+cd $ROOT
+
+echo "Generating Detekt baseline"
+./gradlew --no-configuration-cache detektProjectBaseLine
+
+EXIT_CODE=$?
+
+if [ $EXIT_CODE = 0 ] ; then
+  print_message
+  exit $EXIT_CODE
+else
+  exit 1
+fi

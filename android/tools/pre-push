@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "*********************************************************"
+echo "Running git pre-push hook. Running Detekt... "
+echo "*********************************************************"
+
+ROOT=$(git rev-parse --show-toplevel)
+OUTPUT="/tmp/detekt-$(date +%s)"
+cd $ROOT/android
+./gradlew --no-configuration-cache detekt > $OUTPUT
+
+STATUS=$?
+
+if [ "$STATUS" = 0 ] ; then
+    echo "Static analysis found no problems."
+    rm $OUTPUT
+    exit 0
+else
+    cat $OUTPUT
+    rm $OUTPUT
+    echo "********************************************************"
+    echo "                 Detekt failed                          "
+    echo " Please fix the above issues before pushing.            "
+    echo " Report generated: $(pwd)/build/reports/detekt/merged   "
+    echo "********************************************************"
+    exit $EXIT_CODE
+fi
