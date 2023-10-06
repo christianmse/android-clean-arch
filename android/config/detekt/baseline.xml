@@ -2,18 +2,169 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
+    <ID>ArgumentListWrapping:NetworkModule.kt$(Constants.DEFAULT_CLIENT)</ID>
+    <ID>ArgumentListWrapping:NetworkModule.kt$(client = get(named(Constants.DEFAULT_CLIENT)), jsonDeserializer = get&lt;Json&gt;(), urlBase = sensorsBaseUrl)</ID>
+    <ID>ArgumentListWrapping:NetworkModule.kt$(named(Constants.DEFAULT_CLIENT))</ID>
+    <ID>ArgumentListWrapping:debugNetworkModule.kt$( Constants.DEFAULT_CLIENT_MAX_IDLE_CONNECTIONS, Constants.DEFAULT_CLIENT_KEEP_CONNECTIONS_ALIVE_DURATION_MIN, TimeUnit.MINUTES)</ID>
+    <ID>ArgumentListWrapping:releaseNetworkModule.kt$( Constants.DEFAULT_CLIENT_MAX_IDLE_CONNECTIONS, Constants.DEFAULT_CLIENT_KEEP_CONNECTIONS_ALIVE_DURATION_MIN, TimeUnit.MINUTES)</ID>
     <ID>ConstructorParameterNaming:DiskPreferenceKeys.kt$DiskPreferenceKeys$private val _key: Preferences.Key&lt;*&gt;</ID>
     <ID>EmptyClassBlock:MainActivityViewModel.kt$MainActivityViewModel${ }</ID>
+    <ID>EnumEntryNameCase:AppFlavor.kt$AppFlavor$development : AppFlavor</ID>
+    <ID>EnumEntryNameCase:AppFlavor.kt$AppFlavor$mobile : AppFlavor</ID>
+    <ID>EnumEntryNameCase:AppFlavor.kt$AppFlavor$production : AppFlavor</ID>
+    <ID>EnumEntryNameCase:AppFlavor.kt$AppFlavor$tv : AppFlavor</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$development : AppFlavor</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$mobile : AppFlavor</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$production : AppFlavor</ID>
     <ID>EnumNaming:AppFlavor.kt$AppFlavor$tv : AppFlavor</ID>
+    <ID>Filename:debugNetworkModule.kt$com.iot.network.di.debugNetworkModule.kt</ID>
+    <ID>Filename:developmentUrl.kt$com.iot.network.developmentUrl.kt</ID>
+    <ID>Filename:productionUrl.kt$com.iot.network.productionUrl.kt</ID>
+    <ID>Filename:releaseNetworkModule.kt$com.iot.network.di.releaseNetworkModule.kt</ID>
+    <ID>FinalNewline:AndroidApplicationConventionPlugin.kt$.AndroidApplicationConventionPlugin.kt</ID>
+    <ID>FinalNewline:AndroidApplicationFlavorsConventionPlugin.kt$.AndroidApplicationFlavorsConventionPlugin.kt</ID>
+    <ID>FinalNewline:AndroidFeatureConventionPlugin.kt$.AndroidFeatureConventionPlugin.kt</ID>
+    <ID>FinalNewline:AndroidKoinConventionPlugin.kt$.AndroidKoinConventionPlugin.kt</ID>
+    <ID>FinalNewline:AndroidLibraryConventionPlugin.kt$.AndroidLibraryConventionPlugin.kt</ID>
+    <ID>FinalNewline:AppBuildType.kt$com.iot.convention.AppBuildType.kt</ID>
+    <ID>FinalNewline:AppFlavor.kt$com.iot.convention.AppFlavor.kt</ID>
+    <ID>FinalNewline:AppModule.kt$com.iot.jarvis.di.AppModule.kt</ID>
+    <ID>FinalNewline:BaseActivity.kt$com.iot.common.ui.BaseActivity.kt</ID>
+    <ID>FinalNewline:BaseFragment.kt$com.iot.common.ui.BaseFragment.kt</ID>
+    <ID>FinalNewline:BaseJarvisApplication.kt$com.iot.jarvis.application.BaseJarvisApplication.kt</ID>
+    <ID>FinalNewline:Constants.kt$com.iot.network.di.Constants.kt</ID>
+    <ID>FinalNewline:DiskPreferenceKeys.kt$com.iot.local_data.local.datastore.DiskPreferenceKeys.kt</ID>
+    <ID>FinalNewline:DomainKoinModule.kt$com.iot.domain.di.DomainKoinModule.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.iot.jarvis.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.iot.local_data.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.common.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.data.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.domain.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.feature.home.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.jarvis.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.local_data.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.iot.network.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:Extensions.kt$com.iot.common.Extensions.kt</ID>
+    <ID>FinalNewline:GetSensorsUseCase.kt$com.iot.domain.usecase.GetSensorsUseCase.kt</ID>
+    <ID>FinalNewline:HomeFragment.kt$com.iot.feature.home.ui.view.HomeFragment.kt</ID>
+    <ID>FinalNewline:HomeKoinModule.kt$com.iot.feature.home.di.HomeKoinModule.kt</ID>
+    <ID>FinalNewline:HomeViewModel.kt$com.iot.feature.home.ui.viewModel.HomeViewModel.kt</ID>
+    <ID>FinalNewline:IO.kt$com.iot.local_data.local.IO.kt</ID>
+    <ID>FinalNewline:JarvisApplication.kt$com.iot.jarvis.application.JarvisApplication.kt</ID>
+    <ID>FinalNewline:JvmLibraryConventionPlugin.kt$.JvmLibraryConventionPlugin.kt</ID>
+    <ID>FinalNewline:KotlinAndroid.kt$com.iot.convention.KotlinAndroid.kt</ID>
+    <ID>FinalNewline:KotlinSerializationLibraryConventionPlugin.kt$.KotlinSerializationLibraryConventionPlugin.kt</ID>
+    <ID>FinalNewline:LocalDataModule.kt$com.iot.local_data.di.LocalDataModule.kt</ID>
+    <ID>FinalNewline:MainActivity.kt$com.iot.jarvis.ui.MainActivity.kt</ID>
+    <ID>FinalNewline:MainActivity.kt$ui.MainActivity.kt</ID>
+    <ID>FinalNewline:MainActivityViewModel.kt$com.iot.jarvis.ui.MainActivityViewModel.kt</ID>
+    <ID>FinalNewline:NetworkModule.kt$com.iot.network.di.NetworkModule.kt</ID>
+    <ID>FinalNewline:PreferencesDiskDataSource.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSource.kt</ID>
+    <ID>FinalNewline:PreferencesDiskDataSourceImpl.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSourceImpl.kt</ID>
+    <ID>FinalNewline:ProjectExtensions.kt$com.iot.convention.ProjectExtensions.kt</ID>
+    <ID>FinalNewline:SensorBO.kt$com.iot.model.SensorBO.kt</ID>
+    <ID>FinalNewline:SensorsApi.kt$com.iot.network.api.SensorsApi.kt</ID>
+    <ID>FinalNewline:SensorsPreferencesLocalDataSource.kt$com.iot.local_data.local.SensorsPreferencesLocalDataSource.kt</ID>
+    <ID>FinalNewline:SensorsPreferencesLocalDataSourceImpl.kt$com.iot.local_data.local.impl.SensorsPreferencesLocalDataSourceImpl.kt</ID>
+    <ID>FinalNewline:SensorsRemoteDataSource.kt$com.iot.network.remote.SensorsRemoteDataSource.kt</ID>
+    <ID>FinalNewline:SensorsRemoteDataSourceImpl.kt$com.iot.network.remote.impl.SensorsRemoteDataSourceImpl.kt</ID>
+    <ID>FinalNewline:SensorsRepository.kt$com.iot.data.repository.SensorsRepository.kt</ID>
+    <ID>FinalNewline:SensorsRepositoryImpl.kt$com.iot.data.repository.impl.SensorsRepositoryImpl.kt</ID>
+    <ID>FinalNewline:build.gradle.kts$.build.gradle.kts</ID>
+    <ID>FinalNewline:debugNetworkModule.kt$com.iot.network.di.debugNetworkModule.kt</ID>
+    <ID>FinalNewline:developmentUrl.kt$com.iot.network.developmentUrl.kt</ID>
+    <ID>FinalNewline:init.gradle.kts$.init.gradle.kts</ID>
+    <ID>FinalNewline:productionUrl.kt$com.iot.network.productionUrl.kt</ID>
+    <ID>FinalNewline:releaseNetworkModule.kt$com.iot.network.di.releaseNetworkModule.kt</ID>
+    <ID>FinalNewline:settings.gradle.kts$.settings.gradle.kts</ID>
+    <ID>ImportOrdering:AppFlavor.kt$import com.android.build.api.dsl.ApplicationExtension import com.android.build.api.dsl.ApplicationProductFlavor import com.android.build.api.dsl.ProductFlavor import com.android.build.api.dsl.CommonExtension</ID>
+    <ID>ImportOrdering:DataKoinModule.kt$import com.iot.data.repository.SensorsRepository import com.iot.data.repository.impl.SensorsRepositoryImpl import com.iot.local_data.di.localDataModule import com.iot.network.di.networkKoinModule import org.koin.core.module.Module import org.koin.core.module.dsl.singleOf import org.koin.core.module.dsl.bind import org.koin.dsl.module</ID>
+    <ID>ImportOrdering:DomainKoinModule.kt$import com.iot.data.di.dataKoinModule import org.koin.core.module.Module import org.koin.core.module.dsl.factoryOf import org.koin.dsl.module import com.iot.domain.usecase.GetSensorsUseCase</ID>
+    <ID>ImportOrdering:ExampleInstrumentedTest.kt$import androidx.test.platform.app.InstrumentationRegistry import androidx.test.ext.junit.runners.AndroidJUnit4 import org.junit.Test import org.junit.runner.RunWith import org.junit.Assert.*</ID>
+    <ID>ImportOrdering:ExampleUnitTest.kt$import org.junit.Test import org.junit.Assert.*</ID>
+    <ID>ImportOrdering:MainActivity.kt$import android.os.Bundle import android.view.LayoutInflater import com.google.android.material.snackbar.Snackbar import android.view.Menu import android.view.MenuItem import com.iot.common.ui.BaseActivity import com.iot.jarvis.R import com.iot.jarvis.databinding.ActivityMainBinding</ID>
+    <ID>ImportOrdering:MainActivity.kt$import androidx.appcompat.app.AppCompatActivity import android.os.Bundle import com.iot.jarvis.R</ID>
+    <ID>ImportOrdering:NetworkModule.kt$import com.iot.core_multiplatform.service.SensorsService import com.iot.network.api.SensorsApi import com.iot.network.remote.SensorsRemoteDataSource import com.iot.network.remote.impl.SensorsRemoteDataSourceImpl import com.iot.network.sensorsBaseUrl import kotlinx.serialization.json.Json import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory import okhttp3.MediaType.Companion.toMediaType import okhttp3.OkHttpClient import okhttp3.logging.HttpLoggingInterceptor import org.koin.core.module.Module import org.koin.core.qualifier.named import org.koin.dsl.module import retrofit2.Retrofit</ID>
+    <ID>Indentation:debugNetworkModule.kt$ </ID>
     <ID>MagicNumber:AndroidApplicationConventionPlugin.kt$AndroidApplicationConventionPlugin$34</ID>
     <ID>MagicNumber:AndroidLibraryConventionPlugin.kt$AndroidLibraryConventionPlugin$34</ID>
     <ID>MagicNumber:KotlinAndroid.kt$29</ID>
     <ID>MagicNumber:KotlinAndroid.kt$34</ID>
     <ID>MagicNumber:SensorsRepositoryImpl.kt$SensorsRepositoryImpl$8000</ID>
     <ID>MaxLineLength:NetworkModule.kt$provideRetrofit(client = get(named(Constants.DEFAULT_CLIENT)), jsonDeserializer = get&lt;Json&gt;(), urlBase = sensorsBaseUrl)</ID>
+    <ID>MaximumLineLength:NetworkModule.kt$ </ID>
+    <ID>NewLineAtEndOfFile:AndroidApplicationConventionPlugin.kt$.AndroidApplicationConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidApplicationFlavorsConventionPlugin.kt$.AndroidApplicationFlavorsConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidFeatureConventionPlugin.kt$.AndroidFeatureConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidKoinConventionPlugin.kt$.AndroidKoinConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AndroidLibraryConventionPlugin.kt$.AndroidLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:AppBuildType.kt$com.iot.convention.AppBuildType.kt</ID>
+    <ID>NewLineAtEndOfFile:AppFlavor.kt$com.iot.convention.AppFlavor.kt</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.iot.jarvis.di.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseActivity.kt$com.iot.common.ui.BaseActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseFragment.kt$com.iot.common.ui.BaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseJarvisApplication.kt$com.iot.jarvis.application.BaseJarvisApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:Constants.kt$com.iot.network.di.Constants.kt</ID>
+    <ID>NewLineAtEndOfFile:DiskPreferenceKeys.kt$com.iot.local_data.local.datastore.DiskPreferenceKeys.kt</ID>
+    <ID>NewLineAtEndOfFile:DomainKoinModule.kt$com.iot.domain.di.DomainKoinModule.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.iot.jarvis.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.iot.local_data.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.common.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.domain.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.feature.home.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.jarvis.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.local_data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.iot.network.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:Extensions.kt$com.iot.common.Extensions.kt</ID>
+    <ID>NewLineAtEndOfFile:GetSensorsUseCase.kt$com.iot.domain.usecase.GetSensorsUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeFragment.kt$com.iot.feature.home.ui.view.HomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeKoinModule.kt$com.iot.feature.home.di.HomeKoinModule.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeViewModel.kt$com.iot.feature.home.ui.viewModel.HomeViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:IO.kt$com.iot.local_data.local.IO.kt</ID>
+    <ID>NewLineAtEndOfFile:JarvisApplication.kt$com.iot.jarvis.application.JarvisApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:JvmLibraryConventionPlugin.kt$.JvmLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinAndroid.kt$com.iot.convention.KotlinAndroid.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinSerializationLibraryConventionPlugin.kt$.KotlinSerializationLibraryConventionPlugin.kt</ID>
+    <ID>NewLineAtEndOfFile:LocalDataModule.kt$com.iot.local_data.di.LocalDataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.iot.jarvis.ui.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$ui.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivityViewModel.kt$com.iot.jarvis.ui.MainActivityViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkModule.kt$com.iot.network.di.NetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:PreferencesDiskDataSource.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:PreferencesDiskDataSourceImpl.kt$com.iot.local_data.local.datastore.PreferencesDiskDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ProjectExtensions.kt$com.iot.convention.ProjectExtensions.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorBO.kt$com.iot.model.SensorBO.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsApi.kt$com.iot.network.api.SensorsApi.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsPreferencesLocalDataSource.kt$com.iot.local_data.local.SensorsPreferencesLocalDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsPreferencesLocalDataSourceImpl.kt$com.iot.local_data.local.impl.SensorsPreferencesLocalDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRemoteDataSource.kt$com.iot.network.remote.SensorsRemoteDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRemoteDataSourceImpl.kt$com.iot.network.remote.impl.SensorsRemoteDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRepository.kt$com.iot.data.repository.SensorsRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:SensorsRepositoryImpl.kt$com.iot.data.repository.impl.SensorsRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:build.gradle.kts$.build.gradle.kts</ID>
+    <ID>NewLineAtEndOfFile:debugNetworkModule.kt$com.iot.network.di.debugNetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:developmentUrl.kt$com.iot.network.developmentUrl.kt</ID>
+    <ID>NewLineAtEndOfFile:init.gradle.kts$.init.gradle.kts</ID>
+    <ID>NewLineAtEndOfFile:productionUrl.kt$com.iot.network.productionUrl.kt</ID>
+    <ID>NewLineAtEndOfFile:releaseNetworkModule.kt$com.iot.network.di.releaseNetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:settings.gradle.kts$.settings.gradle.kts</ID>
+    <ID>NoBlankLineBeforeRbrace:JvmLibraryConventionPlugin.kt$JvmLibraryConventionPlugin$ </ID>
+    <ID>NoBlankLineBeforeRbrace:PreferencesDiskDataSourceImpl.kt$PreferencesDiskDataSourceImpl$ </ID>
+    <ID>NoEmptyClassBody:MainActivityViewModel.kt$MainActivityViewModel${ }</ID>
+    <ID>NoUnusedImports:AppFlavor.kt$com.iot.convention.AppFlavor.kt</ID>
+    <ID>NoUnusedImports:SensorsRemoteDataSourceImpl.kt$com.iot.network.remote.impl.SensorsRemoteDataSourceImpl.kt</ID>
+    <ID>NoWildcardImports:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    <ID>NoWildcardImports:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+    <ID>PackageName:DiskPreferenceKeys.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageName:ExampleInstrumentedTest.kt$package com.iot.local_data</ID>
+    <ID>PackageName:ExampleUnitTest.kt$package com.iot.local_data</ID>
+    <ID>PackageName:IO.kt$package com.iot.local_data.local</ID>
+    <ID>PackageName:LocalDataModule.kt$package com.iot.local_data.di</ID>
+    <ID>PackageName:PreferencesDiskDataSource.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageName:PreferencesDiskDataSourceImpl.kt$package com.iot.local_data.local.datastore</ID>
+    <ID>PackageName:SensorsPreferencesLocalDataSource.kt$package com.iot.local_data.local</ID>
+    <ID>PackageName:SensorsPreferencesLocalDataSourceImpl.kt$package com.iot.local_data.local.impl</ID>
     <ID>PackageNaming:DiskPreferenceKeys.kt$package com.iot.local_data.local.datastore</ID>
     <ID>PackageNaming:ExampleInstrumentedTest.kt$package com.iot.local_data</ID>
     <ID>PackageNaming:ExampleUnitTest.kt$package com.iot.local_data</ID>
@@ -23,12 +174,35 @@
     <ID>PackageNaming:PreferencesDiskDataSourceImpl.kt$package com.iot.local_data.local.datastore</ID>
     <ID>PackageNaming:SensorsPreferencesLocalDataSource.kt$package com.iot.local_data.local</ID>
     <ID>PackageNaming:SensorsPreferencesLocalDataSourceImpl.kt$package com.iot.local_data.local.impl</ID>
+    <ID>SpacingAroundColon:AndroidApplicationConventionPlugin.kt$AndroidApplicationConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:AndroidApplicationFlavorsConventionPlugin.kt$AndroidApplicationFlavorsConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:AndroidFeatureConventionPlugin.kt$AndroidFeatureConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:AndroidKoinConventionPlugin.kt$AndroidKoinConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:AndroidLibraryConventionPlugin.kt$AndroidLibraryConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:BaseActivity.kt$BaseActivity$:</ID>
+    <ID>SpacingAroundColon:BaseFragment.kt$BaseFragment$:</ID>
+    <ID>SpacingAroundColon:BaseJarvisApplication.kt$BaseJarvisApplication$:</ID>
+    <ID>SpacingAroundColon:DiskPreferenceKeys.kt$DiskPreferenceKeys.SENSOR_ID$:</ID>
+    <ID>SpacingAroundColon:IO.kt$Write$:</ID>
+    <ID>SpacingAroundColon:JarvisApplication.kt$JarvisApplication$:</ID>
+    <ID>SpacingAroundColon:JvmLibraryConventionPlugin.kt$JvmLibraryConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:KotlinSerializationLibraryConventionPlugin.kt$KotlinSerializationLibraryConventionPlugin$:</ID>
+    <ID>SpacingAroundColon:MainActivityViewModel.kt$MainActivityViewModel$:</ID>
+    <ID>SpacingAroundColon:PreferencesDiskDataSource.kt$PreferencesDiskDataSource$:</ID>
+    <ID>SpacingAroundColon:PreferencesDiskDataSourceImpl.kt$PreferencesDiskDataSourceImpl$:</ID>
+    <ID>SpacingAroundColon:SensorsRemoteDataSourceImpl.kt$SensorsRemoteDataSourceImpl$:</ID>
+    <ID>SpacingAroundColon:SensorsRepositoryImpl.kt$SensorsRepositoryImpl$:</ID>
+    <ID>SpacingAroundKeyword:AppFlavor.kt$when</ID>
+    <ID>StringTemplate:build.gradle.kts$${majorVersion}</ID>
+    <ID>StringTemplate:build.gradle.kts$${minorVersion}</ID>
+    <ID>StringTemplate:build.gradle.kts$${patchLevel}</ID>
     <ID>TopLevelPropertyNaming:developmentUrl.kt$const val sensorsBaseUrl: String = BuildConfig.DEV_BACKEND_URL</ID>
     <ID>TopLevelPropertyNaming:productionUrl.kt$const val sensorsBaseUrl: String = BuildConfig.PROD_BACKEND_URL</ID>
     <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param1: String</ID>
     <ID>UnusedParameter:HomeFragment.kt$HomeFragment.Companion$param2: String</ID>
-    <ID>UnusedPrivateProperty:build.gradle.kts$val clean by registering(Delete::class) { delete(rootProject.buildDir) delete("${rootProject.projectDir}/feature/build") delete("${rootProject.projectDir}/core/build") }</ID>
     <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
     <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+    <ID>Wrapping:debugNetworkModule.kt$(</ID>
+    <ID>Wrapping:releaseNetworkModule.kt$(</ID>
   </CurrentIssues>
 </SmellBaseline>

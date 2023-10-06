@@ -1,0 +1,81 @@
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import io.gitlab.arturbosch.detekt.report.ReportMergeTask
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+plugins {
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.secrets) apply false
+}
+
+def reportMerge = tasks.register("reportMerge", ReportMergeTask) {
+    output = project.layout.buildDirectory.file("reports/detekt/merge.sarif")
+}
+
+tasks.register('detektProjectBaseLine', DetektCreateBaselineTask) {
+    dependsOn(tasks.detektGenerateConfig)
+    description = "Overrides current baseline."
+    ignoreFailures.set(true)
+    parallel.set(true)
+    buildUponDefaultConfig.set(false)
+    setSource(files(rootDir))
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    baseline.set(file("$rootDir/config/detekt/baseline.xml"))
+    include("**/*.kt")
+    include("**/*.kts")
+    exclude("**/resources/**")
+    exclude("**/build/**")
+}
+
+allprojects {
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")
+    }
+}
+
+subprojects {
+
+    reportMerge.configure {
+        input.from(tasks.withType(Detekt).collect { it.sarifReportFile })
+    }
+
+    tasks.withType(Delete).configureEach {
+        delete(project.buildDir)
+    }
+
+    tasks.withType(Detekt).configureEach {
+        include("**/*.kt")
+        include("**/*.kts")
+        exclude("**/resources/**")
+        exclude("**/build/**")
+        exclude("**/tmp/**")
+        reports {
+            sarif.required.set(true)
+        }
+        finalizedBy(reportMerge)
+    }
+
+    detekt {
+        version = libs.versions.detekt
+        basePath = projectDir.absolutePath
+        parallel = true
+        autoCorrect = false
+        buildUponDefaultConfig = false
+        config.setFrom("$rootDir/config/detekt/detekt.yml")
+        baseline = file("$rootDir/config/detekt/baseline.xml")
+    }
+}
