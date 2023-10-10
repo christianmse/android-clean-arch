@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Run the static analysis to the code'
                 dir("android") {
-                sh './gradlew detekt'
+                sh './gradlew detekt -Dorg.gradle.jvmargs=-Xmx1024M'
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Compile the source code'
                 dir("android") {
-                sh './gradlew clean build'
+                sh './gradlew clean build -Dorg.gradle.jvmargs=-Xmx1024M'
                 } 
             }
         }
