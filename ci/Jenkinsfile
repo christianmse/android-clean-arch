@@ -3,12 +3,18 @@ pipeline {
     stages {
         stage('Static Analysis') {
             steps {
-                echo 'Run the static analysis to the code' 
+                echo 'Run the static analysis to the code'
+                dir("android") {
+                sh './gradlew detekt'
+                }
             }
         }
-        stage('Compile') {
+        stage('Build') {
             steps {
-                echo 'Compile the source code' 
+                echo 'Compile the source code'
+                dir("android") {
+                sh './gradlew clean build'
+                } 
             }
         }
         stage('Security Check') {
@@ -30,6 +36,17 @@ pipeline {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
             }
+        }
+    }
+    
+    post {
+    	failure {
+            mail(to: 'christianmsespinoza@gmail.com',
+                    subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) has failed",
+                    body: "Please go to ${env.BUILD_URL}.")
+
+            // Notify build breaker
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])])
         }
     }
 }
